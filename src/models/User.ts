@@ -20,11 +20,11 @@ userSchema.virtual("full_name").get(function () {
   let firstName: string | undefined = this.first_name;
   let secondName: string | undefined = this.second_name;
 
-  if (firstName === "" || firstName === undefined) {
+  if (firstName === undefined) {
     firstName = "";
   }
 
-  if (secondName === "" || secondName === undefined) {
+  if (secondName === undefined) {
     secondName = "";
   }
 
