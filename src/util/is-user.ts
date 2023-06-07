@@ -1,4 +1,4 @@
-import { User } from "../models/user.js";
+import { User } from "../models/user.model.js";
 
 /**
  * Checks the database for existing User with matching username property.

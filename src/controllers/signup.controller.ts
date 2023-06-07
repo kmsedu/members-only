@@ -1,4 +1,4 @@
-import { User, MemberStatus } from "../models/user.js";
+import { User, MemberStatus } from "../models/user.model.js";
 import { validationResult } from "express-validator";
 import type { Request, Response } from "express";
 import bcrypt from "bcrypt";
@@ -7,7 +7,10 @@ import { isUser } from "../util/is-user.js";
 
 export class SignupController {
     public static get(req: Request, res: Response) {
-        res.render("signup", {
+        if (req.user) {
+            return res.redirect("/");
+        }
+        return res.render("signup", {
             user: null,
             errors: null,
         });
@@ -76,10 +79,10 @@ export class SignupController {
             }
 
             const newUser = new User({
-                first_name: req.body["first_name"],
-                second_name: req.body["second_name"],
-                username: req.body["username"],
-                password: await bcrypt.hash(req.body["password"], 10),
+                first_name: req.body.first_name,
+                second_name: req.body.second_name,
+                username: req.body.username,
+                password: await bcrypt.hash(req.body.password, 10),
                 member_status: MemberStatus.STANDARD,
             });
 

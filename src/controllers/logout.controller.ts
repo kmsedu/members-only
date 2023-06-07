@@ -1,4 +1,4 @@
-import { NextFunction, Request, Response } from "express";
+import type { Request, Response, NextFunction } from "express";
 
 export class LogoutController {
     public static get(req: Request, res: Response, next: NextFunction) {
