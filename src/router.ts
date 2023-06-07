@@ -1,21 +1,28 @@
 import { Router } from "express";
-import { SignUpController } from "./controllers/sign-up-controller.js";
-
-const SignUp = new SignUpController();
+import { SignupController } from "./controllers/signup_controller.js";
+import { LoginController } from "./controllers/login_controller.js";
+import { LogoutController } from "./controllers/logout_controller.js";
 
 const router = Router();
 
-router.get("/", (req, res, next) => {
-  res.render("index");
+router.get("/", (req, res) => {
+    console.log(req.user);
+    res.render("index");
 });
 
-router.get("/sign-up-form", (req, res, next) => {
-  res.render("sign-up-form", {
-    user: null,
-    errors: null,
-  });
+router.get("/members", (req, res) => {
+    res.render("members", {
+        user: null,
+        errors: null,
+    });
 });
 
-router.post("/sign-up-form", SignUp.post);
+router.get("/signup", SignupController.get);
+router.post("/signup", SignupController.post);
+
+router.get("/login", LoginController.get);
+router.post("/login", LoginController.post);
+
+router.get("/logout", LogoutController.get);
 
 export { router };

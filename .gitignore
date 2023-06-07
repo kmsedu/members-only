@@ -132,3 +132,6 @@ dist
 # nconf config.json
 */config/config.json
 /src/config
+
+# build folder
+/build/

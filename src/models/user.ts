@@ -8,7 +8,7 @@ export enum MemberStatus {
     ADMIN,
 }
 
-interface User {
+export interface IUser extends mongoose.Document {
     first_name: string;
     second_name: string;
     username: string;
@@ -16,7 +16,7 @@ interface User {
     member_status: MemberStatus;
 }
 
-const userSchema = new Schema<User>({
+const userSchema = new Schema<IUser>({
     first_name: { type: String, required: true },
     second_name: { type: String, required: true },
     username: { type: String, required: true },
@@ -39,6 +39,6 @@ userSchema.virtual("full_name").get(function () {
     return `${firstName} ${secondName}`;
 });
 
-const userModel = mongoose.model<User>("User", userSchema);
+const userModel = mongoose.model<IUser>("User", userSchema);
 
 export { userModel as User };

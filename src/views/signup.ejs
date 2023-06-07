@@ -10,15 +10,15 @@
 <body>
   <form action="" method="post">
     <label for="first-name">First name:</label>
-    <input type="text" name="first-name" id="first-name" value=<%= user ? user["first-name"] : "" %>>
+    <input type="text" name="first_name" id="first-name" value=<%= user ? user.first_name : "" %>>
     <label for="second-name">Second name:</label>
-    <input type="text" name="second-name" id="second-name" value=<%=user ? user["second-name"] : "" %>>
+    <input type="text" name="second_name" id="second-name" value=<%=user ? user.second_name : "" %>>
     <label for="username">Username (Email):</label>
-    <input type="text" name="username" id="username" value=<%=user ? user["username"] : "" %>>
+    <input type="text" name="username" id="username" value=<%=user ? user.username : "" %>>
     <label for="password">Password:</label>
     <input type="password" name="password" id="password">
-    <label for="confirm-password">Confirm Password:</label>
-    <input type="password" name="confirm-password" id="confirm-password">
+    <label for="confirm_password">Confirm Password:</label>
+    <input type="password" name="confirm_password" id="confirm-password">
     <button>Sign up</button>
   </form>
   <% if (errors) { %>
