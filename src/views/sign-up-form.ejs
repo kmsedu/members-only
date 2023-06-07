@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign Up Form</title>
+</head>
+
+<body>
+  <form action="" method="post">
+    <label for="first-name">First name:</label>
+    <input type="text" name="first-name" id="first-name" value=<%= user ? user["first-name"] : "" %>>
+    <label for="second-name">Second name:</label>
+    <input type="text" name="second-name" id="second-name" value=<%=user ? user["second-name"] : "" %>>
+    <label for="username">Username (Email):</label>
+    <input type="text" name="username" id="username" value=<%=user ? user["username"] : "" %>>
+    <label for="password">Password:</label>
+    <input type="password" name="password" id="password">
+    <label for="confirm-password">Confirm Password:</label>
+    <input type="password" name="confirm-password" id="confirm-password">
+    <button>Sign up</button>
+  </form>
+  <% if (errors) { %>
+    <% for (const error of errors.array()) { %>
+      <p>
+        <%= error.msg %>
+      </p>
+    <% } %>
+  <% } %>
+</body>
+
+</html>
