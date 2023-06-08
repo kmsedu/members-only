@@ -14,7 +14,7 @@ const MEMBER_CODE = nconf.get("MEMBER_CODE");
 
 export class MemberController {
     public static get(req: Request, res: Response) {
-        if (!req.user) {
+        if (!req.user || req.user.member_status !== 0) {
             return res.redirect("/");
         }
         return res.render("member", {
