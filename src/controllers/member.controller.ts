@@ -17,7 +17,7 @@ export class MemberController {
         if (!req.user) {
             return res.redirect("/");
         }
-        return res.render("members", {
+        return res.render("member", {
             user: req.user,
             errors: null,
         });
@@ -38,7 +38,7 @@ export class MemberController {
             }
 
             if (!validationErrors.isEmpty()) {
-                return res.render("members", {
+                return res.render("member", {
                     user: req.user,
                     errors: validationErrors,
                 });

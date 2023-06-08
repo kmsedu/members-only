@@ -5,7 +5,8 @@ import { LogoutController } from "./controllers/logout.controller.js";
 import { MemberController } from "./controllers/member.controller.js";
 
 import { Router } from "express";
-const router = Router();
+import { MessageController } from "./controllers/message.controller.js";
+const router: Router = Router();
 
 router.get("/", IndexController.get);
 
@@ -19,5 +20,8 @@ router.get("/login", LoginController.get);
 router.post("/login", LoginController.post);
 
 router.get("/logout", LogoutController.get);
+
+router.get("/message", MessageController.get);
+router.post("/message", MessageController.post);
 
 export { router };
