@@ -6,7 +6,7 @@ export class LogoutController {
             if (error) {
                 return next(error);
             }
-            res.redirect("/");
+            return res.redirect("/");
         });
     }
 }

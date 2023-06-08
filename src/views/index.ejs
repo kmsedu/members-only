@@ -17,8 +17,13 @@
     <% for ( let i = 0; i < posts.length; i++ ) { %>
         <h2><%= posts[i].title %></h2>
         <p><%= posts[i].message %></p>
-        <p><%= user && user.member_status > 0 ? posts[i].pretty_date : "Unknown" %></p>
-        <p><%= user && user.member_status > 0 ? posts[i].author.first_name : "Unknown" %></p>
+        <p><%= user && user.member_status !== 0 ? posts[i].pretty_date : "Unknown" %></p>
+        <p><%= user && user.member_status !== 0 ? posts[i].author.first_name : "Unknown" %></p>
+        <% if (user && user.member_status === 2) { %>
+            <form action="/delete/<%= posts[i].id %>" method="get">
+                <button>Delete</button>
+            </form>
+        <% } %>
     <% } %>
 </body>
 </html>

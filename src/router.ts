@@ -6,6 +6,7 @@ import { MemberController } from "./controllers/member.controller.js";
 
 import { Router } from "express";
 import { MessageController } from "./controllers/message.controller.js";
+import { DeleteController } from "./controllers/delete.controller.js";
 const router: Router = Router();
 
 router.get("/", IndexController.get);
@@ -23,5 +24,8 @@ router.get("/logout", LogoutController.get);
 
 router.get("/message", MessageController.get);
 router.post("/message", MessageController.post);
+
+router.get("/delete/:id", DeleteController.get);
+router.post("/delete/:id", DeleteController.post);
 
 export { router };
