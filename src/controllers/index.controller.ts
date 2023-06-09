@@ -13,11 +13,13 @@ export class IndexController {
 
         if (!req.user) {
             return res.render("index", {
+                title: "Veiled",
                 user: null,
                 posts,
             });
         }
         return res.render("index", {
+            title: "Veiled",
             user: req.user,
             posts,
         });

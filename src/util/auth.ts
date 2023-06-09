@@ -1,6 +1,6 @@
 import { Strategy as LocalStrategy } from "passport-local";
 import { User } from "../models/user.model.js";
-import bcrypt from "bcrypt";
+import bcrypt from "bcryptjs";
 
 export class Auth {
     public static localStrategy = new LocalStrategy(

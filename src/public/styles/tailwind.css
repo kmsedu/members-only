@@ -1,0 +1,64 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: "Roboto Flex";
+    src: url("../fonts/webfonts/roboto-flex-latin-400-normal.woff");
+    src: url("../fonts/webfonts/roboto-flex-latin-400-normal.woff2");
+}
+
+@font-face {
+    font-family: "Koulen";
+    src: url("../fonts/webfonts/koulen-latin-400-normal.woff");
+    src: url("../fonts/webfonts/koulen-latin-400-normal.woff2");
+}
+
+@font-face {
+    font-family: "Martel Sans";
+
+    src: url("../fonts/ttf/MartelSans-ExtraLight.ttf");
+    font-weight: 100;
+}
+
+@font-face {
+    font-family: "Martel Sans";
+
+    src: url("../fonts/ttf/MartelSans-ExtraLight.ttf");
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: "Martel Sans";
+
+    src: url("../fonts/ttf/MartelSans-Regular.ttf");
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "Martel Sans";
+
+    src: url("../fonts/ttf/MartelSans-SemiBold.ttf");
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: "Martel Sans";
+
+    src: url("../fonts/ttf/MartelSans-Bold.ttf");
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: "Martel Sans";
+
+    src: url("../fonts/ttf/MartelSans-ExtraBold.ttf");
+    font-weight: 800;
+}
+
+@font-face {
+    font-family: "Martel Sans";
+
+    src: url("../fonts/ttf/MartelSans-Black.ttf");
+    font-weight: 900;
+}

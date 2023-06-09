@@ -3,12 +3,15 @@ import { body, validationResult } from "express-validator";
 import { Message } from "../models/message.model.js";
 
 export class MessageController {
+    private static readonly PAGE_TITLE = "Create a new message";
+
     public static get(req: Request, res: Response) {
         if (!req.user) {
             return res.redirect("/login");
         }
 
         res.render("message", {
+            title: MessageController.PAGE_TITLE,
             user: req.user,
             errors: null,
         });
@@ -44,7 +47,10 @@ export class MessageController {
                     message: req.body.message,
                 };
 
-                return res.render("message", { formData });
+                return res.render("message", {
+                    title: MessageController.PAGE_TITLE,
+                    formData,
+                });
             }
 
             const newMessage = new Message({

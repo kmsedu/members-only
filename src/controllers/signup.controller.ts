@@ -1,17 +1,21 @@
 import { User, MemberStatus } from "../models/user.model.js";
 import { validationResult } from "express-validator";
 import type { Request, Response } from "express";
-import bcrypt from "bcrypt";
+import bcrypt from "bcryptjs";
 import { body, matchedData } from "express-validator";
 import { isUser } from "../util/is-user.js";
 
 export class SignupController {
+    private static readonly PAGE_TITLE = "Sign up for Veiled";
+
     public static get(req: Request, res: Response) {
         if (req.user) {
             return res.redirect("/");
         }
         return res.render("signup", {
+            title: SignupController.PAGE_TITLE,
             user: null,
+            formData: null,
             errors: null,
         });
     }
@@ -60,7 +64,7 @@ export class SignupController {
 
                 return data.password === password;
             })
-            .withMessage("Passwords do not match"),
+            .withMessage("Passwords do not match."),
 
         async function (req: Request, res: Response) {
             const validationErrors = validationResult(req);
@@ -73,7 +77,9 @@ export class SignupController {
                 };
 
                 return res.render("signup", {
-                    user: formData,
+                    title: SignupController.PAGE_TITLE,
+                    user: null,
+                    formData,
                     errors: validationErrors,
                 });
             }

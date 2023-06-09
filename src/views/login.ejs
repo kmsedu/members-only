@@ -1,25 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Log in</title>
-</head>
+
+<%- include("head"); %>
+
 <body>
+    <%- include("header"); %>
+
     <form action="" method="post">
         <label for="username">
+            <span>Username:</span>
             <input type="text" name="username" id="username" required>
         </label>
         <label for="password">
+            <span>Password:</span>
             <input type="password" name="password" id="password" required>
         </label>
         <button>Sign in</button>
     </form>
+
     <% if (errors && errors.length !== 0) { %>
         <% for (const error of errors) { %>
             <p><%= error %></p>
         <% } %>
     <% } %>
+
 </body>
 </html>

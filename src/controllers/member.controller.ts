@@ -1,23 +1,28 @@
+import dotenv from "dotenv";
+dotenv.config();
+
 import type { Request, Response } from "express";
 import { body, validationResult } from "express-validator";
-import nconf from "nconf";
 import { MemberStatus, User } from "../models/user.model.js";
-import { fileURLToPath } from "url";
-import path from "path";
-
-const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const src = __dirname.replace("/controllers", "");
-
-nconf.env().file({ file: path.join(src, "/config/config.json") });
-
-const MEMBER_CODE = nconf.get("MEMBER_CODE");
 
 export class MemberController {
+    private static getMemberCode() {
+        const MEMBER_CODE = process.env.MEMBER_CODE;
+        console.log(process.env);
+
+        if (!MEMBER_CODE) throw new Error("Unable to get MEMBER_CODE from env");
+
+        return MEMBER_CODE;
+    }
+
+    private static readonly PAGE_TITLE = "Members access";
+
     public static get(req: Request, res: Response) {
         if (!req.user || req.user.member_status !== 0) {
             return res.redirect("/");
         }
         return res.render("member", {
+            title: MemberController.PAGE_TITLE,
             user: req.user,
             errors: null,
         });
@@ -27,7 +32,7 @@ export class MemberController {
         body("code")
             .escape()
             .trim()
-            .matches(MEMBER_CODE)
+            .matches(MemberController.getMemberCode())
             .withMessage("Incorrect member code."),
 
         async function (req: Request, res: Response) {

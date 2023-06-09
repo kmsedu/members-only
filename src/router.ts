@@ -3,10 +3,10 @@ import { SignupController } from "./controllers/signup.controller.js";
 import { LoginController } from "./controllers/login.controller.js";
 import { LogoutController } from "./controllers/logout.controller.js";
 import { MemberController } from "./controllers/member.controller.js";
-
-import { Router } from "express";
 import { MessageController } from "./controllers/message.controller.js";
 import { DeleteController } from "./controllers/delete.controller.js";
+
+import { Router } from "express";
 const router: Router = Router();
 
 router.get("/", IndexController.get);
