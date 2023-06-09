@@ -7,6 +7,7 @@
                 >Veiled</a
             >
         </div>
+        <% if (!user) { %>
         <div
             class="navbar-end pr-4 sm:navbar-center sm:w-auto sm:justify-center"
         >
@@ -36,7 +37,10 @@
                     </a>
                 </li>
                 <li>
-                    <a href="/login" class="sm:hidden">
+                    <a
+                        href="/login"
+                        class="no-animation bg-primary hover:!bg-primary-focus sm:hidden"
+                    >
                         <svg
                             width="24px"
                             height="24px"
@@ -57,7 +61,10 @@
             </ul>
         </div>
         <div class="hidden pr-4 sm:navbar-end sm:flex">
-            <a href="/login" class="btn-primary btn flex px-12 normal-case">
+            <a
+                href="/login"
+                class="btn-primary btn flex max-w-xs text-lg normal-case"
+            >
                 <svg
                     width="24px"
                     height="24px"
@@ -76,5 +83,114 @@
                 Log in
             </a>
         </div>
+        <% } else { %>
+        <div
+            class="navbar-end pr-4 sm:navbar-center sm:w-auto sm:justify-center"
+        >
+            <ul
+                class="menu rounded-box menu-horizontal flex-nowrap bg-base-200"
+            >
+                <li>
+                    <a href="/message">
+                        <svg
+                            width="24"
+                            height="24"
+                            viewBox="0 0 512 512"
+                            version="1.1"
+                            xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink"
+                            class="fill-base-content"
+                        >
+                            <title>New message</title>
+                            <g
+                                id="Page-1"
+                                stroke="none"
+                                stroke-width="1"
+                                fill-rule="evenodd"
+                            >
+                                <g
+                                    id="scheduler"
+                                    transform="translate(85.333333, 85.333333)"
+                                >
+                                    <path
+                                        d="M170.666667,1.42108547e-14 C264.923264,-3.10380131e-15 341.333333,76.4100694 341.333333,170.666667 C341.333333,264.923264 264.923264,341.333333 170.666667,341.333333 C76.4100694,341.333333 2.57539587e-14,264.923264 1.42108547e-14,170.666667 C2.6677507e-15,76.4100694 76.4100694,3.15255107e-14 170.666667,1.42108547e-14 Z M170.666667,42.6666667 C99.9742187,42.6666667 42.6666667,99.9742187 42.6666667,170.666667 C42.6666667,241.359115 99.9742187,298.666667 170.666667,298.666667 C241.359115,298.666667 298.666667,241.359115 298.666667,170.666667 C298.666667,99.9742187 241.359115,42.6666667 170.666667,42.6666667 Z M192,85.3333333 L191.999333,149.333333 L256,149.333333 L256,192 L191.999333,191.999333 L192,256 L149.333333,256 L149.333333,191.999333 L85.3333333,192 L85.3333333,149.333333 L149.333333,149.333333 L149.333333,85.3333333 L192,85.3333333 Z"
+                                        id="Combined-Shape"
+                                    ></path>
+                                </g>
+                            </g>
+                        </svg>
+                        <span class="hidden sm:inline">New message</span>
+                    </a>
+                </li>
+                <% if (user && user.member_status === 0) { %>
+                <li>
+                    <a href="/members">
+                        <svg
+                            class="stroke-base-content"
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <path
+                                d="M3 8L4.44293 16.6576C4.76439 18.5863 6.43315 20 8.38851 20H15.6115C17.5668 20 19.2356 18.5863 19.5571 16.6576L21 8M3 8L6.75598 11.0731C7.68373 11.8321 9.06623 11.6102 9.70978 10.5989L12 7M3 8C3.82843 8 4.5 7.32843 4.5 6.5C4.5 5.67157 3.82843 5 3 5C2.17157 5 1.5 5.67157 1.5 6.5C1.5 7.32843 2.17157 8 3 8ZM21 8L17.244 11.0731C16.3163 11.8321 14.9338 11.6102 14.2902 10.5989L12 7M21 8C21.8284 8 22.5 7.32843 22.5 6.5C22.5 5.67157 21.8284 5 21 5C20.1716 5 19.5 5.67157 19.5 6.5C19.5 7.32843 20.1716 8 21 8ZM12 7C12.8284 7 13.5 6.32843 13.5 5.5C13.5 4.67157 12.8284 4 12 4C11.1716 4 10.5 4.67157 10.5 5.5C10.5 6.32843 11.1716 7 12 7Z"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                            />
+                        </svg>
+                        <span class="hidden sm:inline">Members access</span>
+                    </a>
+                </li>
+                <% } %>
+                <li>
+                    <a
+                        href="/logout"
+                        class="no-animation bg-info hover:!bg-indigo-600 sm:hidden"
+                    >
+                        <svg
+                            class="fill-base-content"
+                            width="24"
+                            height="24"
+                            viewBox="0 0 512 512"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <title>Log out</title>
+                            <path
+                                d="M160,256a16,16,0,0,1,16-16H320V136c0-32-33.79-56-64-56H104a56.06,56.06,0,0,0-56,56V376a56.06,56.06,0,0,0,56,56H264a56.06,56.06,0,0,0,56-56V272H176A16,16,0,0,1,160,256Z"
+                            />
+                            <path
+                                d="M459.31,244.69l-80-80a16,16,0,0,0-22.62,22.62L409.37,240H320v32h89.37l-52.68,52.69a16,16,0,1,0,22.62,22.62l80-80a16,16,0,0,0,0-22.62Z"
+                            />
+                        </svg>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="hidden pr-4 sm:navbar-end sm:flex">
+            <a
+                href="/logout"
+                class="btn flex max-w-xs bg-info text-lg normal-case hover:bg-indigo-600"
+            >
+                <svg
+                    class="fill-base-content"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 512 512"
+                    xmlns="http://www.w3.org/2000/svg"
+                >
+                    <title>Log out</title>
+                    <path
+                        d="M160,256a16,16,0,0,1,16-16H320V136c0-32-33.79-56-64-56H104a56.06,56.06,0,0,0-56,56V376a56.06,56.06,0,0,0,56,56H264a56.06,56.06,0,0,0,56-56V272H176A16,16,0,0,1,160,256Z"
+                    />
+                    <path
+                        d="M459.31,244.69l-80-80a16,16,0,0,0-22.62,22.62L409.37,240H320v32h89.37l-52.68,52.69a16,16,0,1,0,22.62,22.62l80-80a16,16,0,0,0,0-22.62Z"
+                    />
+                </svg>
+                Log out
+            </a>
+        </div>
+        <% } %>
     </nav>
 </header>

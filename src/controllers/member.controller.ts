@@ -8,7 +8,6 @@ import { MemberStatus, User } from "../models/user.model.js";
 export class MemberController {
     private static getMemberCode() {
         const MEMBER_CODE = process.env.MEMBER_CODE;
-        console.log(process.env);
 
         if (!MEMBER_CODE) throw new Error("Unable to get MEMBER_CODE from env");
 
