@@ -6,9 +6,9 @@
   "type": "module",
   "scripts": {
     "dev": "pnpm run style & nodemon src/index.ts",
-    "style": "postcss src/public/styles/tailwind.css -o src/public/styles/style.css --watch",
+    "style": "postcss src/tailwind.css -o src/public/styles/style.css --watch",
     "clean": "rm -rf ./build",
-    "build": "pnpm run clean &&  tsc --build && postcss ./src/public/styles/tailwind.css -o build/public/styles/style.css && cp -R ./src/views ./build/views"
+    "build": "pnpm run clean &&  tsc --build && postcss ./src/tailwind.css -o build/public/styles/style.css && cp -R ./src/views ./build/views"
   },
   "keywords": [],
   "author": "",

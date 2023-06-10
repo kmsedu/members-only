@@ -129,9 +129,8 @@ dist
 .yarn/install-state.gz
 .pnp.*
 
-# nconf config.json
-*/config/config.json
-/src/config
-
 # build folder
 /build/
+
+# public folder
+/*/public
