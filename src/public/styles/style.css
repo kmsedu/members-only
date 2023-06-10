@@ -34,7 +34,7 @@ html {
   -moz-tab-size: 4; /* 3 */
   -o-tab-size: 4;
      tab-size: 4; /* 3 */
-  font-family: "Roboto Flex", sans-serif; /* 4 */
+  font-family: "Fira Sans", sans-serif; /* 4 */
   font-feature-settings: normal; /* 5 */
   font-variation-settings: normal; /* 6 */
 }
@@ -1394,6 +1394,42 @@ html {
   width: 50%;
   justify-content: flex-end;
 }
+.swap {
+  position: relative;
+  display: inline-grid;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  place-content: center;
+  cursor: pointer;
+}
+.swap > * {
+  grid-column-start: 1;
+  grid-row-start: 1;
+  transition-duration: 300ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-property: transform, opacity;
+}
+.swap input {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+.swap .swap-on,
+.swap .swap-indeterminate,
+.swap input:indeterminate ~ .swap-on {
+  opacity: 0;
+}
+.swap input:checked ~ .swap-off,
+.swap.swap-active .swap-off,
+.swap input:indeterminate ~ .swap-off {
+  opacity: 0;
+}
+.swap input:checked ~ .swap-on,
+.swap-active .swap-on,
+.swap input:indeterminate ~ .swap-indeterminate {
+  opacity: 1;
+}
 .textarea {
   flex-shrink: 1;
   min-height: 3rem;
@@ -1931,6 +1967,11 @@ details.collapse summary::-webkit-details-marker {
   font-weight: 700;
   color: hsl(var(--bc) / 0.4);
 }
+.mockup-phone .display {
+  overflow: hidden;
+  border-radius: 40px;
+  margin-top: -25px;
+}
 @keyframes modal-pop {
 
   0% {
@@ -2324,17 +2365,14 @@ details.collapse summary::-webkit-details-marker {
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
 }
+.pb-3 {
+  padding-bottom: 0.75rem;
+}
 .pr-4 {
   padding-right: 1rem;
 }
 .pr-8 {
   padding-right: 2rem;
-}
-.pb-6 {
-  padding-bottom: 1.5rem;
-}
-.pb-3 {
-  padding-bottom: 0.75rem;
 }
 .text-center {
   text-align: center;
@@ -2349,10 +2387,6 @@ details.collapse summary::-webkit-details-marker {
 .text-5xl {
   font-size: 3rem;
   line-height: 1;
-}
-.text-lg {
-  font-size: 1.125rem;
-  line-height: 1.75rem;
 }
 .text-sm {
   font-size: 0.875rem;
@@ -2970,10 +3004,6 @@ details.collapse summary::-webkit-details-marker {
   .sm\:my-6 {
     margin-top: 1.5rem;
     margin-bottom: 1.5rem;
-  }
-
-  .sm\:mt-6 {
-    margin-top: 1.5rem;
   }
 
   .sm\:inline {

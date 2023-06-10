@@ -3,8 +3,7 @@ module.exports = {
     theme: {
         extend: {
             fontFamily: {
-                sans: ['"Roboto Flex"', "sans-serif"],
-                title: ["Martel Sans", "sans-serif"],
+                sans: ['"Fira Sans"', "sans-serif"],
             },
         },
     },
