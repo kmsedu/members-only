@@ -1,5 +1,6 @@
 import type { Request, Response } from "express";
 import { Message } from "../models/message.model.js";
+import htmlString from "he";
 
 export class IndexController {
     public static async get(req: Request, res: Response) {
@@ -9,6 +10,11 @@ export class IndexController {
 
         if (!posts) {
             return res.send("No posts found on database.");
+        }
+
+        for (let i = 0; i < posts.length; i++) {
+            posts[i].title = htmlString.unescape(posts[i].title);
+            posts[i].message = htmlString.unescape(posts[i].message);
         }
 
         if (!req.user) {

@@ -63,7 +63,7 @@
         <div class="hidden pr-4 sm:navbar-end sm:flex">
             <a
                 href="/login"
-                class="btn-primary btn flex max-w-xs text-lg normal-case"
+                class="btn-primary btn flex max-w-xs normal-case hover:bg-primary"
             >
                 <svg
                     width="24px"
@@ -91,7 +91,7 @@
                 class="menu rounded-box menu-horizontal flex-nowrap bg-base-200"
             >
                 <li>
-                    <a href="/message">
+                    <a href="/message" class="hover:!bg-success hover:!text-success-content">
                         <svg
                             width="24"
                             height="24"
@@ -124,7 +124,7 @@
                 </li>
                 <% if (user && user.member_status === 0) { %>
                 <li>
-                    <a href="/members">
+                    <a href="/members" class="hover:!bg-warning hover:!text-warning-content">
                         <svg
                             class="stroke-base-content"
                             width="24"
@@ -147,7 +147,7 @@
                 <li>
                     <a
                         href="/logout"
-                        class="no-animation bg-info hover:!bg-indigo-600 sm:hidden"
+                        class="sm:hidden hover:!bg-error"
                     >
                         <svg
                             class="fill-base-content"
@@ -171,7 +171,7 @@
         <div class="hidden pr-4 sm:navbar-end sm:flex">
             <a
                 href="/logout"
-                class="btn flex max-w-xs bg-info text-lg normal-case hover:bg-indigo-600"
+                class="btn btn-error flex max-w-xs normal-case"
             >
                 <svg
                     class="fill-base-content"
