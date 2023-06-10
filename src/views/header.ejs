@@ -3,34 +3,30 @@
         <div class="navbar-start h-full">
             <a
                 href="/"
-                class="btn-ghost no-animation btn h-16 rounded-none rounded-e-full pr-8 text-2xl normal-case text-neutral-content hover:bg-white hover:bg-opacity-10"
-                >Veiled</a
-            >
+                class="btn-ghost no-animation btn h-16 rounded-none rounded-e-full pr-8 text-2xl normal-case text-neutral-content hover:bg-white hover:bg-opacity-10"></a>
+                Veiled
+            </a>
         </div>
         <% if (!user) { %>
         <div
-            class="navbar-end pr-4 sm:navbar-center sm:w-auto sm:justify-center"
-        >
+            class="navbar-end pr-4 sm:navbar-center sm:w-auto sm:justify-center">
             <ul
-                class="menu rounded-box menu-horizontal flex-nowrap bg-base-200"
-            >
+                class="menu rounded-box menu-horizontal flex-nowrap bg-base-200">
                 <li>
-                    <a href="/signup">
+                    <a href="/signup" class="hover:!bg-success">
                         <svg
                             width="24px"
                             height="24px"
                             viewBox="0 0 24 24"
                             xmlns="http://www.w3.org/2000/svg"
-                            class="fill-base-content"
-                        >
+                            class="fill-base-content">
                             <rect x="0" fill="none" width="24" height="24" />
 
                             <g>
                                 <circle cx="15" cy="8" r="4" />
 
                                 <path
-                                    d="M15 20s8 0 8-2c0-2.4-3.9-5-8-5s-8 2.6-8 5c0 2 8 2 8 2zM6 10V7H4v3H1v2h3v3h2v-3h3v-2z"
-                                />
+                                    d="M15 20s8 0 8-2c0-2.4-3.9-5-8-5s-8 2.6-8 5c0 2 8 2 8 2zM6 10V7H4v3H1v2h3v3h2v-3h3v-2z" />
                             </g>
                         </svg>
                         <span class="hidden sm:inline">Sign up</span>
@@ -39,22 +35,18 @@
                 <li>
                     <a
                         href="/login"
-                        class="no-animation bg-primary hover:!bg-primary-focus sm:hidden"
-                    >
+                        class="no-animation bg-primary hover:!bg-primary-focus sm:hidden">
                         <svg
                             width="24px"
                             height="24px"
                             viewBox="0 0 24 24"
                             fill="none"
                             xmlns="http://www.w3.org/2000/svg"
-                            class="fill-base-content"
-                        >
+                            class="fill-base-content">
                             <path
-                                d="M16.8 2H14.2C11 2 9 4 9 7.2V11.25H13.44L11.37 9.18C11.22 9.03 11.15 8.84 11.15 8.65C11.15 8.46 11.22 8.27 11.37 8.12C11.66 7.83 12.14 7.83 12.43 8.12L15.78 11.47C16.07 11.76 16.07 12.24 15.78 12.53L12.43 15.88C12.14 16.17 11.66 16.17 11.37 15.88C11.08 15.59 11.08 15.11 11.37 14.82L13.44 12.75H9V16.8C9 20 11 22 14.2 22H16.79C19.99 22 21.99 20 21.99 16.8V7.2C22 4 20 2 16.8 2Z"
-                            />
+                                d="M16.8 2H14.2C11 2 9 4 9 7.2V11.25H13.44L11.37 9.18C11.22 9.03 11.15 8.84 11.15 8.65C11.15 8.46 11.22 8.27 11.37 8.12C11.66 7.83 12.14 7.83 12.43 8.12L15.78 11.47C16.07 11.76 16.07 12.24 15.78 12.53L12.43 15.88C12.14 16.17 11.66 16.17 11.37 15.88C11.08 15.59 11.08 15.11 11.37 14.82L13.44 12.75H9V16.8C9 20 11 22 14.2 22H16.79C19.99 22 21.99 20 21.99 16.8V7.2C22 4 20 2 16.8 2Z" />
                             <path
-                                d="M2.75 11.25C2.34 11.25 2 11.59 2 12C2 12.41 2.34 12.75 2.75 12.75H9V11.25H2.75Z"
-                            />
+                                d="M2.75 11.25C2.34 11.25 2 11.59 2 12C2 12.41 2.34 12.75 2.75 12.75H9V11.25H2.75Z" />
                         </svg>
                     </a>
                 </li>
@@ -63,35 +55,31 @@
         <div class="hidden pr-4 sm:navbar-end sm:flex">
             <a
                 href="/login"
-                class="btn-primary btn flex max-w-xs normal-case hover:bg-primary"
-            >
+                class="btn-primary btn flex max-w-xs normal-case hover:bg-primary">
                 <svg
                     width="24px"
                     height="24px"
                     viewBox="0 0 24 24"
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"
-                    class="fill-base-content"
-                >
+                    class="fill-base-content">
                     <path
-                        d="M16.8 2H14.2C11 2 9 4 9 7.2V11.25H13.44L11.37 9.18C11.22 9.03 11.15 8.84 11.15 8.65C11.15 8.46 11.22 8.27 11.37 8.12C11.66 7.83 12.14 7.83 12.43 8.12L15.78 11.47C16.07 11.76 16.07 12.24 15.78 12.53L12.43 15.88C12.14 16.17 11.66 16.17 11.37 15.88C11.08 15.59 11.08 15.11 11.37 14.82L13.44 12.75H9V16.8C9 20 11 22 14.2 22H16.79C19.99 22 21.99 20 21.99 16.8V7.2C22 4 20 2 16.8 2Z"
-                    />
+                        d="M16.8 2H14.2C11 2 9 4 9 7.2V11.25H13.44L11.37 9.18C11.22 9.03 11.15 8.84 11.15 8.65C11.15 8.46 11.22 8.27 11.37 8.12C11.66 7.83 12.14 7.83 12.43 8.12L15.78 11.47C16.07 11.76 16.07 12.24 15.78 12.53L12.43 15.88C12.14 16.17 11.66 16.17 11.37 15.88C11.08 15.59 11.08 15.11 11.37 14.82L13.44 12.75H9V16.8C9 20 11 22 14.2 22H16.79C19.99 22 21.99 20 21.99 16.8V7.2C22 4 20 2 16.8 2Z" />
                     <path
-                        d="M2.75 11.25C2.34 11.25 2 11.59 2 12C2 12.41 2.34 12.75 2.75 12.75H9V11.25H2.75Z"
-                    />
+                        d="M2.75 11.25C2.34 11.25 2 11.59 2 12C2 12.41 2.34 12.75 2.75 12.75H9V11.25H2.75Z" />
                 </svg>
                 Log in
             </a>
         </div>
         <% } else { %>
         <div
-            class="navbar-end pr-4 sm:navbar-center sm:w-auto sm:justify-center"
-        >
+            class="navbar-end pr-4 sm:navbar-center sm:w-auto sm:justify-center">
             <ul
-                class="menu rounded-box menu-horizontal flex-nowrap bg-base-200"
-            >
+                class="menu rounded-box menu-horizontal flex-nowrap bg-base-200">
                 <li>
-                    <a href="/message" class="hover:!bg-success hover:!text-success-content">
+                    <a
+                        href="/message"
+                        class="hover:!bg-success hover:!text-success-content">
                         <svg
                             width="24"
                             height="24"
@@ -99,23 +87,19 @@
                             version="1.1"
                             xmlns="http://www.w3.org/2000/svg"
                             xmlns:xlink="http://www.w3.org/1999/xlink"
-                            class="fill-base-content"
-                        >
+                            class="fill-base-content">
                             <title>New message</title>
                             <g
                                 id="Page-1"
                                 stroke="none"
                                 stroke-width="1"
-                                fill-rule="evenodd"
-                            >
+                                fill-rule="evenodd">
                                 <g
                                     id="scheduler"
-                                    transform="translate(85.333333, 85.333333)"
-                                >
+                                    transform="translate(85.333333, 85.333333)">
                                     <path
                                         d="M170.666667,1.42108547e-14 C264.923264,-3.10380131e-15 341.333333,76.4100694 341.333333,170.666667 C341.333333,264.923264 264.923264,341.333333 170.666667,341.333333 C76.4100694,341.333333 2.57539587e-14,264.923264 1.42108547e-14,170.666667 C2.6677507e-15,76.4100694 76.4100694,3.15255107e-14 170.666667,1.42108547e-14 Z M170.666667,42.6666667 C99.9742187,42.6666667 42.6666667,99.9742187 42.6666667,170.666667 C42.6666667,241.359115 99.9742187,298.666667 170.666667,298.666667 C241.359115,298.666667 298.666667,241.359115 298.666667,170.666667 C298.666667,99.9742187 241.359115,42.6666667 170.666667,42.6666667 Z M192,85.3333333 L191.999333,149.333333 L256,149.333333 L256,192 L191.999333,191.999333 L192,256 L149.333333,256 L149.333333,191.999333 L85.3333333,192 L85.3333333,149.333333 L149.333333,149.333333 L149.333333,85.3333333 L192,85.3333333 Z"
-                                        id="Combined-Shape"
-                                    ></path>
+                                        id="Combined-Shape"></path>
                                 </g>
                             </g>
                         </svg>
@@ -124,69 +108,57 @@
                 </li>
                 <% if (user && user.member_status === 0) { %>
                 <li>
-                    <a href="/members" class="hover:!bg-warning hover:!text-warning-content">
+                    <a
+                        href="/members"
+                        class="hover:!bg-warning hover:!text-warning-content">
                         <svg
                             class="stroke-base-content"
                             width="24"
                             height="24"
                             viewBox="0 0 24 24"
                             fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                        >
+                            xmlns="http://www.w3.org/2000/svg">
                             <path
                                 d="M3 8L4.44293 16.6576C4.76439 18.5863 6.43315 20 8.38851 20H15.6115C17.5668 20 19.2356 18.5863 19.5571 16.6576L21 8M3 8L6.75598 11.0731C7.68373 11.8321 9.06623 11.6102 9.70978 10.5989L12 7M3 8C3.82843 8 4.5 7.32843 4.5 6.5C4.5 5.67157 3.82843 5 3 5C2.17157 5 1.5 5.67157 1.5 6.5C1.5 7.32843 2.17157 8 3 8ZM21 8L17.244 11.0731C16.3163 11.8321 14.9338 11.6102 14.2902 10.5989L12 7M21 8C21.8284 8 22.5 7.32843 22.5 6.5C22.5 5.67157 21.8284 5 21 5C20.1716 5 19.5 5.67157 19.5 6.5C19.5 7.32843 20.1716 8 21 8ZM12 7C12.8284 7 13.5 6.32843 13.5 5.5C13.5 4.67157 12.8284 4 12 4C11.1716 4 10.5 4.67157 10.5 5.5C10.5 6.32843 11.1716 7 12 7Z"
                                 stroke-linecap="round"
                                 stroke-linejoin="round"
-                                stroke-width="2"
-                            />
+                                stroke-width="2" />
                         </svg>
                         <span class="hidden sm:inline">Members access</span>
                     </a>
                 </li>
                 <% } %>
                 <li>
-                    <a
-                        href="/logout"
-                        class="sm:hidden hover:!bg-error"
-                    >
+                    <a href="/logout" class="hover:!bg-error sm:hidden">
                         <svg
                             class="fill-base-content"
                             width="24"
                             height="24"
                             viewBox="0 0 512 512"
-                            xmlns="http://www.w3.org/2000/svg"
-                        >
+                            xmlns="http://www.w3.org/2000/svg">
                             <title>Log out</title>
                             <path
-                                d="M160,256a16,16,0,0,1,16-16H320V136c0-32-33.79-56-64-56H104a56.06,56.06,0,0,0-56,56V376a56.06,56.06,0,0,0,56,56H264a56.06,56.06,0,0,0,56-56V272H176A16,16,0,0,1,160,256Z"
-                            />
+                                d="M160,256a16,16,0,0,1,16-16H320V136c0-32-33.79-56-64-56H104a56.06,56.06,0,0,0-56,56V376a56.06,56.06,0,0,0,56,56H264a56.06,56.06,0,0,0,56-56V272H176A16,16,0,0,1,160,256Z" />
                             <path
-                                d="M459.31,244.69l-80-80a16,16,0,0,0-22.62,22.62L409.37,240H320v32h89.37l-52.68,52.69a16,16,0,1,0,22.62,22.62l80-80a16,16,0,0,0,0-22.62Z"
-                            />
+                                d="M459.31,244.69l-80-80a16,16,0,0,0-22.62,22.62L409.37,240H320v32h89.37l-52.68,52.69a16,16,0,1,0,22.62,22.62l80-80a16,16,0,0,0,0-22.62Z" />
                         </svg>
                     </a>
                 </li>
             </ul>
         </div>
         <div class="hidden pr-4 sm:navbar-end sm:flex">
-            <a
-                href="/logout"
-                class="btn btn-error flex max-w-xs normal-case"
-            >
+            <a href="/logout" class="btn-error btn flex max-w-xs normal-case">
                 <svg
                     class="fill-base-content"
                     width="24"
                     height="24"
                     viewBox="0 0 512 512"
-                    xmlns="http://www.w3.org/2000/svg"
-                >
+                    xmlns="http://www.w3.org/2000/svg">
                     <title>Log out</title>
                     <path
-                        d="M160,256a16,16,0,0,1,16-16H320V136c0-32-33.79-56-64-56H104a56.06,56.06,0,0,0-56,56V376a56.06,56.06,0,0,0,56,56H264a56.06,56.06,0,0,0,56-56V272H176A16,16,0,0,1,160,256Z"
-                    />
+                        d="M160,256a16,16,0,0,1,16-16H320V136c0-32-33.79-56-64-56H104a56.06,56.06,0,0,0-56,56V376a56.06,56.06,0,0,0,56,56H264a56.06,56.06,0,0,0,56-56V272H176A16,16,0,0,1,160,256Z" />
                     <path
-                        d="M459.31,244.69l-80-80a16,16,0,0,0-22.62,22.62L409.37,240H320v32h89.37l-52.68,52.69a16,16,0,1,0,22.62,22.62l80-80a16,16,0,0,0,0-22.62Z"
-                    />
+                        d="M459.31,244.69l-80-80a16,16,0,0,0-22.62,22.62L409.37,240H320v32h89.37l-52.68,52.69a16,16,0,1,0,22.62,22.62l80-80a16,16,0,0,0,0-22.62Z" />
                 </svg>
                 Log out
             </a>

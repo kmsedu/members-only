@@ -1,80 +1,71 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="standard" class="h-full">
+    <%- include("head"); %>
 
-<%- include("head"); %>
+    <body class="flex h-full flex-col bg-base-200 sm:grid sm:grid-cols-2">
+        <div
+            class="navbar max-h-16 justify-evenly bg-base-300 text-white sm:h-full sm:max-h-none sm:justify-start sm:p-8 sm:text-4xl">
+            <a href="/" class="btn-ghost btn text-2xl normal-case">Veiled</a>
+            <span class="text-white text-opacity-30">|</span>
+            <h1 class="font-bold opacity-80">Log in</h1>
+        </div>
 
-<body class="flex flex-col sm:grid sm:grid-cols-2 h-full bg-base-200">
-
-    <div
-    class="navbar justify-evenly bg-base-300 text-white max-h-16 sm:justify-start sm:p-8 sm:text-4xl sm:max-h-none sm:h-full"
->
-    <a
-        href="/"
-        class="btn-ghost btn text-2xl normal-case"
-        >Veiled</a
-    >
-    <span class="text-white text-opacity-30">|</span>
-    <h1 class="font-bold opacity-80">Log in</h1>
-</div>
-
-    <form action="" method="post" class="bg-base-100 card rounded-none sm:p-8 sm:rounded-box sm:self-center sm:justify-self-center flex flex-col items-center flex-1">
-        <fieldset class="flex-1">
-            <label
-            for="first-name"
-            class="hidden w-full sm:label sm:max-w-sm"
-                >
-            <span class="label-text"
-                >Username (email)<span class="text-error">*</span>:</span
-            >
+        <form
+            action=""
+            method="post"
+            class="card flex flex-1 flex-col items-center rounded-none bg-base-100 sm:rounded-box sm:self-center sm:justify-self-center sm:p-8">
+            <fieldset class="flex-1">
+                <label
+                    for="first-name"
+                    class="hidden w-full sm:label sm:max-w-sm">
+                    <span class="label-text">
+                        Username (email)
+                        <span class="text-error">*</span>
+                        :
+                    </span>
                 </label>
-            <input
-                            type="text"
-                            placeholder="Username (email)"
-                            name="username"
-                            id="username"
-                            class="input w-full rounded-none border-b border-l-0 border-r-0 border-t-0 border-neutral bg-neutral-focus transition-colors duration-200 input-lg focus:bg-neutral focus:outline-none sm:max-w-sm sm:border sm:border-error sm:placeholder:text-transparent sm:placeholder-shown:border-neutral sm:valid:border-success sm:focus:border-primary md:rounded-md"
-                            required
-                            size="60"
-                        />
-            <label
-            for="password"
-            class="hidden w-full sm:label sm:max-w-sm"
-                >
-            <span class="label-text"
-                >Password<span class="text-error">*</span>:</span
-            >
+                <input
+                    type="text"
+                    placeholder="Username (email)"
+                    name="username"
+                    id="username"
+                    class="input input-lg w-full rounded-none border-b border-l-0 border-r-0 border-t-0 border-neutral bg-neutral-focus transition-colors duration-200 focus:bg-neutral focus:outline-none sm:max-w-sm sm:border sm:border-error sm:placeholder:text-transparent sm:placeholder-shown:border-neutral sm:valid:border-success sm:focus:border-primary md:rounded-md"
+                    required
+                    size="60" />
+                <label
+                    for="password"
+                    class="hidden w-full sm:label sm:max-w-sm">
+                    <span class="label-text">
+                        Password
+                        <span class="text-error">*</span>
+                        :
+                    </span>
                 </label>
-            <input
-                            type="password"
-                            placeholder="Password"
-                            name="password"
-                            id="password"
-                            class="input w-full rounded-none border-b border-l-0 border-r-0 border-t-0 border-neutral bg-neutral-focus transition-colors duration-200 input-lg focus:bg-neutral focus:outline-none sm:max-w-sm sm:border sm:border-error sm:placeholder:text-transparent sm:placeholder-shown:border-neutral sm:valid:border-success sm:focus:border-primary md:rounded-md"
-                            required
-                        />
-        </fieldset>
+                <input
+                    type="password"
+                    placeholder="Password"
+                    name="password"
+                    id="password"
+                    class="input input-lg w-full rounded-none border-b border-l-0 border-r-0 border-t-0 border-neutral bg-neutral-focus transition-colors duration-200 focus:bg-neutral focus:outline-none sm:max-w-sm sm:border sm:border-error sm:placeholder:text-transparent sm:placeholder-shown:border-neutral sm:valid:border-success sm:focus:border-primary md:rounded-md"
+                    required />
+            </fieldset>
 
-                    <% if (errors && errors.length !== 0) { %>
-                        <% for (const error of errors) { %>
-                            <p class="py-1 text-sm italic text-error"><%= error %></p>
-                        <% } %>
-                    <% } %>
+            <% if (errors && errors.length !== 0) { %> <% for (const error of
+            errors) { %>
+            <p class="py-1 text-sm italic text-error"><%= error %></p>
+            <% } %> <% } %>
 
-                    <div
-                    class="flex w-full sm:join sm:relative sm:max-w-sm sm:p-8"
-                >
-                    <button
-                        class="btn-primary join-item btn flex-1 rounded-none normal-case"
-                    >
-                        Sign in
-                    </button>
-                    <a
-                        class="btn-error join-item btn flex-1 rounded-none normal-case"
-                        href="/"
-                        >Cancel</a
-                    >
-                </div>
-    </form>
-
-</body>
+            <div class="flex w-full sm:join sm:relative sm:max-w-sm sm:p-8">
+                <button
+                    class="btn-primary join-item btn flex-1 rounded-none normal-case">
+                    Sign in
+                </button>
+                <a
+                    class="btn-error join-item btn flex-1 rounded-none normal-case"
+                    href="/">
+                    Cancel
+                </a>
+            </div>
+        </form>
+    </body>
 </html>

@@ -1,51 +1,79 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="standard">
-
     <%- include("head"); %>
 
-    <body class="min-h-screen flex flex-col">
+    <body class="flex min-h-screen flex-col">
         <%- include("header"); %>
 
-        <main class="bg-base-300 flex flex-col items-center h-full flex-1">
+        <main class="flex h-full flex-1 flex-col items-center bg-base-300">
             <% if (!user) { %>
-            <section class="hero bg-base-200 h-96">
+            <section class="hero h-96 bg-base-200">
                 <div class="hero-content text-center">
                     <div class="max-w-md">
-                        <h1 class="text-5xl font-bold py-6">Say something!</h1>
-                            <a href="/login" class="btn btn-primary btn-wide normal-case">Log in to create a message</a>
-                            <div class="divider">or</div>
-                            <a href="/signup" class="btn btn-success btn-wide normal-case">Sign up now!</a>
+                        <h1 class="py-6 text-5xl font-bold">Say something!</h1>
+                        <a
+                            href="/login"
+                            class="btn-primary btn-wide btn normal-case">
+                            Log in to create a message
+                        </a>
+                        <div class="divider">or</div>
+                        <a
+                            href="/signup"
+                            class="btn-success btn-wide btn normal-case">
+                            Sign up now!
+                        </a>
                     </div>
                 </div>
             </section>
             <% } %>
-            <section class="message-board bg-base-200 place-items-center p-6 w-full grid sm:card sm:max-w-2xl sm:my-6">
-                        <div class="flex gap-2 pb-3">
-                            <svg class="fill-neutral" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12,1A11,11,0,1,0,23,12,11.013,11.013,0,0,0,12,1Zm0,20a9,9,0,1,1,9-9A9.011,9.011,0,0,1,12,21ZM13,8H11V6h2Zm0,10H11V10h2Z"/></svg>
-                            <span class="prose">Click a message to view</span>
-                        </div>
+            <section
+                class="message-board grid w-full place-items-center bg-base-200 p-6 sm:card sm:my-6 sm:max-w-2xl">
+                <div class="flex gap-2 pb-3">
+                    <svg
+                        class="fill-neutral"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M12,1A11,11,0,1,0,23,12,11.013,11.013,0,0,0,12,1Zm0,20a9,9,0,1,1,9-9A9.011,9.011,0,0,1,12,21ZM13,8H11V6h2Zm0,10H11V10h2Z" />
+                    </svg>
+                    <span class="prose">Click a message to view</span>
+                </div>
                 <% for ( let i=0; i < posts.length; i++ ) { %>
-                    <div class="collapse bg-base-100 my-3 prose sm:prose-xl">
-                        <input type="checkbox" />
-                        <div class="collapse-title text-xl font-bold flex justify-between">
-                            <span><%= posts[i].title %></span>
-                            <span class="hidden sm:inline"><%= user && user.member_status !== 0 ? posts[i].author.first_name : "Hidden" %></span>
-                        </div>
-                        <div class="collapse-content">
-                            <p><%= posts[i].message %></p>
-                            <div class="flex flex-col justify-end">
-                                <span class="sm:hidden text-sm font-bold">- <%= user && user.member_status !== 0 ? posts[i].author.first_name : "Hidden" %></span>
-                                <span class="text-sm opacity-60">Date: <%= user && user.member_status !== 0 ? posts[i].pretty_date : "Hidden" %></span>
-                                <% if (user && user.member_status === 2) { %>
-                                    <a href="/delete/<%= posts[i].id %>" class="text-sm text-right link-error">Delete</a>
-                                <% } %>
-                            </div>
+                <div class="prose collapse my-3 bg-base-100 sm:prose-xl">
+                    <input type="checkbox" />
+                    <div
+                        class="collapse-title flex justify-between text-xl font-bold">
+                        <span><%= posts[i].title %></span>
+                        <span class="hidden sm:inline">
+                            <%= user && user.member_status !== 0 ?
+                            posts[i].author.first_name : "Hidden" %>
+                        </span>
+                    </div>
+                    <div class="collapse-content">
+                        <p><%= posts[i].message %></p>
+                        <div class="flex flex-col justify-end">
+                            <span class="text-sm font-bold sm:hidden">
+                                - <%= user && user.member_status !== 0 ?
+                                posts[i].author.first_name : "Hidden" %>
+                            </span>
+                            <span class="text-sm opacity-60">
+                                Date: <%= user && user.member_status !== 0 ?
+                                posts[i].pretty_date : "Hidden" %>
+                            </span>
+                            <% if (user && user.member_status === 2) { %>
+                            <a
+                                href="/delete/<%= posts[i].id %>"
+                                class="link-error text-right text-sm">
+                                Delete
+                            </a>
+                            <% } %>
                         </div>
                     </div>
+                </div>
                 <% } %>
             </section>
         </main>
     </body>
-
 </html>
-

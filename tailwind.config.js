@@ -1,4 +1,7 @@
-module.exports = {
+import daisyui from "daisyui";
+import typography from "@tailwindcss/typography";
+
+export default {
     content: ["./src/**/*.{html,js,ts,ejs}"],
     theme: {
         extend: {
@@ -7,7 +10,7 @@ module.exports = {
             },
         },
     },
-    plugins: [require("@tailwindcss/typography"), require("daisyui")],
+    plugins: [typography, daisyui],
     daisyui: {
         themes: [
             {
