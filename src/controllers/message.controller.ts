@@ -14,6 +14,7 @@ export class MessageController {
             title: MessageController.PAGE_TITLE,
             user: req.user,
             errors: null,
+            formData: null,
         });
     }
 
@@ -23,16 +24,16 @@ export class MessageController {
             .trim()
             .notEmpty()
             .withMessage("Title can not be an empty input")
-            .isLength({ min: 3, max: 70 })
-            .withMessage("Title must be min 3 chars, and max 70 chars"),
+            .isLength({ min: 3, max: 40 })
+            .withMessage("Title must be min 3 chars, and max 40 chars"),
 
         body("message")
-            .escape()
             .trim()
             .notEmpty()
             .withMessage("Message can not be empty")
             .isLength({ min: 8, max: 255 })
-            .withMessage("Message must be min 8 chars, and max 255 chars"),
+            .withMessage("Message must be min 8 chars, and max 255 chars")
+            .escape(),
 
         async function (req: Request, res: Response) {
             if (!req.user) {
@@ -50,6 +51,8 @@ export class MessageController {
                 return res.render("message", {
                     title: MessageController.PAGE_TITLE,
                     formData,
+                    errors: validationErrors,
+                    user: req.user,
                 });
             }
 

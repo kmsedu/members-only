@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="standard">
+<html
+    lang="en"
+    data-theme="standard">
     <%- include("head"); %>
 
     <body class="flex min-h-screen flex-col">
@@ -41,20 +43,17 @@
                     <span class="prose">Click a message to view</span>
                 </div>
                 <% for ( let i=0; i < posts.length; i++ ) { %>
-                <div class="prose collapse my-3 bg-base-100 sm:prose-xl">
-                    <input type="checkbox" />
-                    <div
+                <details
+                    tabindex="0"
+                    class="collapse-arrow prose collapse my-3 bg-base-100 sm:prose-xl focus-within:outline-none">
+                    <summary
                         class="collapse-title flex justify-between text-xl font-bold">
-                        <span><%= posts[i].title %></span>
-                        <span class="hidden sm:inline">
-                            <%= user && user.member_status !== 0 ?
-                            posts[i].author.first_name : "Hidden" %>
-                        </span>
-                    </div>
+                        <%= posts[i].title %>
+                    </summary>
                     <div class="collapse-content">
                         <p><%= posts[i].message %></p>
                         <div class="flex flex-col justify-end">
-                            <span class="text-sm font-bold sm:hidden">
+                            <span class="text-sm font-bold">
                                 - <%= user && user.member_status !== 0 ?
                                 posts[i].author.first_name : "Hidden" %>
                             </span>
@@ -71,7 +70,7 @@
                             <% } %>
                         </div>
                     </div>
-                </div>
+                </details>
                 <% } %>
             </section>
         </main>

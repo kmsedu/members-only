@@ -13,17 +13,26 @@
             <ul
                 class="menu rounded-box menu-horizontal flex-nowrap bg-base-200">
                 <li>
-                    <a href="/signup" class="hover:!bg-success">
+                    <a
+                        href="/signup"
+                        class="duration-0 hover:!bg-success sm:duration-150">
                         <svg
                             width="24px"
                             height="24px"
                             viewBox="0 0 24 24"
                             xmlns="http://www.w3.org/2000/svg"
                             class="fill-base-content">
-                            <rect x="0" fill="none" width="24" height="24" />
+                            <rect
+                                x="0"
+                                fill="none"
+                                width="24"
+                                height="24" />
 
                             <g>
-                                <circle cx="15" cy="8" r="4" />
+                                <circle
+                                    cx="15"
+                                    cy="8"
+                                    r="4" />
 
                                 <path
                                     d="M15 20s8 0 8-2c0-2.4-3.9-5-8-5s-8 2.6-8 5c0 2 8 2 8 2zM6 10V7H4v3H1v2h3v3h2v-3h3v-2z" />
@@ -79,7 +88,7 @@
                 <li>
                     <a
                         href="/message"
-                        class="hover:!bg-success hover:!text-success-content">
+                        class="duration-0 hover:!bg-success hover:!text-success-content active:!bg-success sm:duration-150">
                         <svg
                             width="24"
                             height="24"
@@ -110,7 +119,7 @@
                 <li>
                     <a
                         href="/members"
-                        class="hover:!bg-warning hover:!text-warning-content">
+                        class="duration-0 hover:!bg-warning hover:!text-warning-content sm:duration-150">
                         <svg
                             class="stroke-base-content"
                             width="24"
@@ -129,7 +138,9 @@
                 </li>
                 <% } %>
                 <li>
-                    <a href="/logout" class="hover:!bg-error sm:hidden">
+                    <a
+                        href="/logout"
+                        class="bg-error hover:!bg-error sm:hidden">
                         <svg
                             class="fill-base-content"
                             width="24"
@@ -147,7 +158,9 @@
             </ul>
         </div>
         <div class="hidden pr-4 sm:navbar-end sm:flex">
-            <a href="/logout" class="btn-error btn flex max-w-xs normal-case">
+            <a
+                href="/logout"
+                class="btn-error btn flex max-w-xs normal-case">
                 <svg
                     class="fill-base-content"
                     width="24"

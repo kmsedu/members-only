@@ -4,5 +4,6 @@
     ],
     "tailwindConfig": "./tailwind.config.js",
     "bracketSameLine": true,
-    "htmlWhitespaceSensitivity": "ignore"
+    "htmlWhitespaceSensitivity": "ignore",
+    "singleAttributePerLine": true
 }

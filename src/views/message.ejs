@@ -1,23 +1,87 @@
 <!DOCTYPE html>
-<html lang="en">
+<html
+    lang="en"
+    data-theme="standard"
+    class="h-full">
     <%- include("head"); %>
 
-    <body>
-        <%- include("header"); %>
+    <body class="flex h-full flex-col">
+        <main class="flex flex-1 flex-col bg-base-200 md:grid md:grid-cols-2">
+            <div
+                class="navbar max-h-16 justify-evenly bg-base-300 text-white md:h-full md:max-h-none md:justify-start md:p-0 md:text-4xl">
+                <a
+                    href="/"
+                    class="btn-ghost btn text-2xl normal-case">
+                    Veiled
+                </a>
+                <span class="text-white text-opacity-30">|</span>
+                <h1 class="font-bold opacity-80">New message</h1>
+            </div>
+            <form
+                action=""
+                method="post"
+                class="card flex w-full flex-1 flex-col items-center rounded-none bg-base-100 md:rounded-box md:h-auto md:w-auto md:self-center md:justify-self-center md:p-8">
+                <label
+                    for="title"
+                    class="hidden w-full md:label md:max-w-sm">
+                    <span class="label-text">
+                        Title
+                        <span class="text-error">*</span>
+                        :
+                    </span>
+                </label>
+                <input type="text" placeholder="Title" size="60" name="title"
+                id="title" minlength="3" maxlength="40" class="input input-lg
+                w-full rounded-none border-b border-l-0 border-r-0 border-t-0
+                border-neutral bg-neutral-focus transition-colors duration-200
+                focus:bg-neutral focus:outline-none md:max-w-sm md:border
+                md:border-error md:placeholder:text-transparent
+                md:placeholder-shown:border-neutral md:valid:border-success
+                md:focus:border-primary md:rounded-md" required value="<%=
+                formData ? formData.title : "" %>" />
 
-        <h1>Create new message</h1>
-        <form action="" method="post">
-            <label for="title">
-                <input type="text" name="title" id="title" required />
-            </label>
-            <label for="message">
+                <label
+                    for="message"
+                    class="hidden w-full md:label md:max-w-sm">
+                    <span class="label-text">
+                        Message
+                        <span class="text-error">*</span>
+                        :
+                    </span>
+                </label>
                 <textarea
+                    style="resize: none"
                     name="message"
                     id="message"
                     cols="30"
-                    rows="10"></textarea>
-            </label>
-            <button>Create</button>
-        </form>
+                    rows="10"
+                    minlength="8"
+                    maxlength="255"
+                    placeholder="Message"
+                    required
+                    class="textarea textarea-md w-full overflow-auto rounded-none border-b border-l-0 border-r-0 border-t-0 border-neutral bg-neutral-focus transition-colors duration-200 focus:bg-neutral focus:outline-none md:max-w-sm md:rounded-md md:border md:border-error md:placeholder:text-transparent md:placeholder-shown:border-neutral md:valid:border-success md:focus:border-primary">
+<%= formData ? formData.message : "" %></textarea
+                >
+                <div class="error-container max-w-lg flex-1 p-4">
+                    <% if (errors) { %> <% for (const error of errors.array()) {
+                    %>
+                    <p class="py-0.5 text-sm italic text-error">
+                        <%= error.msg %>
+                    </p>
+                    <%}%><%}%>
+                </div>
+                <div class="flex w-full md:join md:relative md:max-w-sm">
+                    <button
+                        class="btn-primary join-item btn flex-1 rounded-none normal-case">
+                        Create message
+                    </button>
+                    <a
+                        class="btn-error join-item btn flex-1 rounded-none normal-case"
+                        href="/">
+                        Cancel
+                    </a>
+                </div>
+            </form>
+        </main>
     </body>
 </html>

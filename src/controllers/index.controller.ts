@@ -8,6 +8,7 @@ export class IndexController {
     public static async get(req: Request, res: Response) {
         const posts = await Message.find()
             .populate("author", { _id: 0, first_name: 1 })
+            .sort({ timestamp: -1 })
             .exec();
 
         if (!posts) {

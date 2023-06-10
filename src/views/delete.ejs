@@ -1,14 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
+<html
+    lang="en"
+    class="h-full">
     <%- include("head"); %>
 
-    <body>
+    <body class="flex h-full flex-col sm:grid">
         <%- include("header"); %>
-        <h1>Delete message</h1>
-        <p>Are you sure you want to delete this message?</p>
-        <form action="" method="post">
-            <button>Yes</button>
-        </form>
-        <a href="/">No, get me out of here</a>
+        <main
+            class="card prose mx-auto flex flex-1 flex-col items-center justify-start justify-self-center rounded-none bg-base-200 sm:rounded-box sm:mb-24 sm:flex-none sm:self-start sm:p-8">
+            <h1 class="px-8 py-4">Delete message</h1>
+            <p class="m-0 flex-1 px-8">
+                Are you sure you want to delete this message?
+            </p>
+            <form
+                method="post"
+                class="flex w-full justify-center pt-6 sm:join sm:relative sm:max-w-md">
+                <button
+                    class="btn-warning join-item btn flex-1 rounded-none normal-case">
+                    Yes, delete it
+                </button>
+                <a
+                    class="btn-error join-item btn flex-1 rounded-none normal-case"
+                    href="/">
+                    No, get me out of here
+                </a>
+            </form>
+        </main>
     </body>
 </html>
