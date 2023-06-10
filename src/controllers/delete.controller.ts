@@ -11,6 +11,7 @@ export class DeleteController {
         return res.render("delete", {
             title: "Delete message",
             id: req.params.id,
+            user: req.user,
         });
     }
 

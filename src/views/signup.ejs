@@ -3,137 +3,129 @@
     <%- include("head"); %>
 
     <body class="h-full">
-        <main class="grid h-full sm:grid-cols-2">
-            <div id="sign-up-pane" class="hidden bg-base-200 sm:flex">
-                <a
-                    class="btn-ghost no-animation btn h-16 rounded-none rounded-e-full pr-8 text-2xl normal-case text-white hover:bg-white hover:bg-opacity-10"
-                    href="/">
+        <main class="flex h-full flex-col bg-base-200 sm:grid sm:grid-cols-2">
+            <div
+                class="navbar max-h-16 justify-evenly bg-base-300 text-white sm:h-full sm:max-h-none sm:justify-start sm:p-8 sm:text-4xl">
+                <a href="/" class="btn-ghost btn text-2xl normal-case">
                     Veiled
                 </a>
+                <span class="text-white text-opacity-30">|</span>
+                <h1 class="font-bold opacity-80">Sign up</h1>
             </div>
 
-            <form
-                action=""
-                method="post"
-                class="flex flex-col items-center justify-between">
-                <div
-                    class="navbar justify-evenly bg-base-300 text-white sm:justify-start sm:p-8 sm:text-4xl">
-                    <a
-                        href="/"
-                        class="btn-ghost btn text-2xl normal-case sm:hidden">
-                        Veiled
-                    </a>
-                    <span class="text-white text-opacity-30 sm:hidden">|</span>
-                    <h1 class="font-bold opacity-80">Sign up</h1>
-                </div>
-
-                <fieldset
-                    class="flex w-full flex-1 flex-col items-center sm:pt-8">
-                    <label
-                        for="first-name"
-                        class="hidden w-full sm:label sm:max-w-sm">
-                        <span class="label-text">
-                            First name
-                            <span class="text-error">*</span>
-                            :
-                        </span>
-                    </label>
-                    <input
-                        type="text"
-                        placeholder="First name"
-                        name="first_name"
-                        id="first-name"
-                        class="input input-lg w-full rounded-none border-b border-l-0 border-r-0 border-t-0 border-neutral bg-neutral-focus transition-colors duration-200 focus:bg-neutral focus:outline-none sm:max-w-sm sm:border sm:border-error sm:placeholder:text-transparent sm:placeholder-shown:border-neutral sm:valid:border-success sm:focus:border-primary md:rounded-md"
-                        required />
-                    <label
-                        for="second-name"
-                        class="hidden w-full sm:label sm:max-w-sm">
-                        <span class="label-text">
-                            Second name
-                            <span class="text-error">*</span>
-                            :
-                        </span>
-                    </label>
-                    <input
-                        type="text"
-                        placeholder="Second name"
-                        name="second_name"
-                        id="second-name"
-                        class="input input-lg w-full rounded-none border-b border-l-0 border-r-0 border-t-0 border-neutral bg-neutral-focus transition-colors duration-200 focus:bg-neutral focus:outline-none sm:max-w-sm sm:border sm:border-error sm:placeholder:text-transparent sm:placeholder-shown:border-neutral sm:valid:border-success sm:focus:border-primary md:rounded-md"
-                        required />
-                    <label
-                        for="username"
-                        class="hidden w-full sm:label sm:max-w-sm">
-                        <span class="label-text">
-                            Username (email)
-                            <span class="text-error">*</span>
-                            :
-                        </span>
-                    </label>
-                    <input
-                        type="email"
-                        placeholder="Username (email)"
-                        name="username"
-                        id="username"
-                        class="input input-lg w-full rounded-none border-b border-l-0 border-r-0 border-t-0 border-neutral bg-neutral-focus transition-colors duration-200 focus:bg-neutral focus:outline-none sm:max-w-sm sm:border sm:border-error sm:placeholder:text-transparent sm:placeholder-shown:border-neutral sm:valid:border-success sm:focus:border-primary md:rounded-md"
-                        required />
-                    <label
-                        for="password"
-                        class="hidden w-full sm:label sm:max-w-sm">
-                        <span class="label-text">
-                            Password
-                            <span class="text-error">*</span>
-                            :
-                        </span>
-                    </label>
-                    <input
-                        type="password"
-                        placeholder="Password"
-                        name="password"
-                        id="password"
-                        class="input input-lg w-full rounded-none border-b border-l-0 border-r-0 border-t-0 border-neutral bg-neutral-focus transition-colors duration-200 focus:bg-neutral focus:outline-none sm:max-w-sm sm:border sm:border-error sm:placeholder:text-transparent sm:placeholder-shown:border-neutral sm:valid:border-success sm:focus:border-primary md:rounded-md"
-                        minlength="8"
-                        required />
-                    <label
-                        for="confirm-password"
-                        class="hidden w-full sm:label sm:max-w-sm">
-                        <span class="label-text">
-                            Confirm password
-                            <span class="text-error">*</span>
-                            :
-                        </span>
-                    </label>
-                    <input
-                        type="password"
-                        placeholder="Confirm password"
-                        name="confirm_password"
-                        id="confirm-password"
-                        class="input input-lg w-full rounded-none border-b border-l-0 border-r-0 border-t-0 border-neutral bg-neutral-focus transition-colors duration-200 focus:bg-neutral focus:outline-none sm:max-w-sm sm:border sm:border-error sm:placeholder:text-transparent sm:placeholder-shown:border-neutral sm:valid:border-success sm:focus:border-primary md:rounded-md"
-                        minlength="8"
-                        required />
-                </fieldset>
-
-                <div class="error-container flex-1 p-4 sm:h-auto">
-                    <% if (errors) { %> <% for (const error of errors.array()) {
-                    %>
-                    <p class="py-1 text-sm italic text-error">
-                        <%= error.msg %>
-                    </p>
-                    <%}%><%}%>
-                </div>
-
-                <div class="flex w-full sm:join sm:relative sm:max-w-sm sm:p-8">
-                    <button
-                        class="btn-success join-item btn flex-1 rounded-none normal-case">
-                        Sign up
-                    </button>
-                    <a
-                        class="btn-error join-item btn flex-1 rounded-none normal-case"
-                        href="/">
-                        Cancel
-                    </a>
-                </div>
-            </form>
+            <div
+                class="form-container flex-1 sm:flex sm:items-center sm:justify-center">
+                <form
+                    action=""
+                    method="post"
+                    class="card flex h-full w-full flex-col items-center rounded-none bg-base-100 sm:rounded-box sm:h-auto sm:w-auto sm:self-center sm:justify-self-center sm:p-8">
+                    <fieldset
+                        class="flex w-full flex-col items-center sm:max-w-sm">
+                        <label
+                            for="first-name"
+                            class="hidden w-full sm:label sm:max-w-sm">
+                            <span class="label-text">
+                                First name
+                                <span class="text-error">*</span>
+                                :
+                            </span>
+                        </label>
+                        <input
+                            type="text"
+                            placeholder="First name"
+                            name="first_name"
+                            id="first-name"
+                            class="input input-lg w-full rounded-none border-b border-l-0 border-r-0 border-t-0 border-neutral bg-neutral-focus transition-colors duration-200 focus:bg-neutral focus:outline-none sm:max-w-sm sm:border sm:border-error sm:placeholder:text-transparent sm:placeholder-shown:border-neutral sm:valid:border-success sm:focus:border-primary md:rounded-md"
+                            required
+                            size="60" />
+                        <label
+                            for="second-name"
+                            class="hidden w-full sm:label sm:max-w-sm">
+                            <span class="label-text">
+                                Second name
+                                <span class="text-error">*</span>
+                                :
+                            </span>
+                        </label>
+                        <input
+                            type="text"
+                            placeholder="Second name"
+                            name="second_name"
+                            id="second-name"
+                            class="input input-lg w-full rounded-none border-b border-l-0 border-r-0 border-t-0 border-neutral bg-neutral-focus transition-colors duration-200 focus:bg-neutral focus:outline-none sm:max-w-sm sm:border sm:border-error sm:placeholder:text-transparent sm:placeholder-shown:border-neutral sm:valid:border-success sm:focus:border-primary md:rounded-md"
+                            required />
+                        <label
+                            for="username"
+                            class="hidden w-full sm:label sm:max-w-sm">
+                            <span class="label-text">
+                                Username (email)
+                                <span class="text-error">*</span>
+                                :
+                            </span>
+                        </label>
+                        <input
+                            type="email"
+                            placeholder="Username (email)"
+                            name="username"
+                            id="username"
+                            class="input input-lg w-full rounded-none border-b border-l-0 border-r-0 border-t-0 border-neutral bg-neutral-focus transition-colors duration-200 focus:bg-neutral focus:outline-none sm:max-w-sm sm:border sm:border-error sm:placeholder:text-transparent sm:placeholder-shown:border-neutral sm:valid:border-success sm:focus:border-primary md:rounded-md"
+                            required />
+                        <label
+                            for="password"
+                            class="hidden w-full sm:label sm:max-w-sm">
+                            <span class="label-text">
+                                Password
+                                <span class="text-error">*</span>
+                                :
+                            </span>
+                        </label>
+                        <input
+                            type="password"
+                            placeholder="Password"
+                            name="password"
+                            id="password"
+                            class="input input-lg w-full rounded-none border-b border-l-0 border-r-0 border-t-0 border-neutral bg-neutral-focus transition-colors duration-200 focus:bg-neutral focus:outline-none sm:max-w-sm sm:border sm:border-error sm:placeholder:text-transparent sm:placeholder-shown:border-neutral sm:valid:border-success sm:focus:border-primary md:rounded-md"
+                            minlength="8"
+                            required />
+                        <label
+                            for="confirm-password"
+                            class="hidden w-full sm:label sm:max-w-sm">
+                            <span class="label-text">
+                                Confirm password
+                                <span class="text-error">*</span>
+                                :
+                            </span>
+                        </label>
+                        <input
+                            type="password"
+                            placeholder="Confirm password"
+                            name="confirm_password"
+                            id="confirm-password"
+                            class="input input-lg w-full rounded-none border-b border-l-0 border-r-0 border-t-0 border-neutral bg-neutral-focus transition-colors duration-200 focus:bg-neutral focus:outline-none sm:max-w-sm sm:border sm:border-error sm:placeholder:text-transparent sm:placeholder-shown:border-neutral sm:valid:border-success sm:focus:border-primary md:rounded-md"
+                            minlength="8"
+                            required />
+                    </fieldset>
+                    <div class="error-container max-w-lg flex-1 p-4">
+                        <% if (errors) { %> <% for (const error of
+                        errors.array()) { %>
+                        <p class="py-0.5 text-sm italic text-error">
+                            <%= error.msg %>
+                        </p>
+                        <%}%><%}%>
+                    </div>
+                    <div class="flex w-full sm:join sm:relative sm:max-w-sm">
+                        <button
+                            class="btn-success join-item btn flex-1 rounded-none normal-case">
+                            Sign up
+                        </button>
+                        <a
+                            class="btn-error join-item btn flex-1 rounded-none normal-case"
+                            href="/">
+                            Cancel
+                        </a>
+                    </div>
+                </form>
+            </div>
         </main>
     </body>
 </html>

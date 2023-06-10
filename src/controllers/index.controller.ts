@@ -3,6 +3,8 @@ import { Message } from "../models/message.model.js";
 import htmlString from "he";
 
 export class IndexController {
+    private static readonly PAGE_TITLE = "Veiled";
+
     public static async get(req: Request, res: Response) {
         const posts = await Message.find()
             .populate("author", { _id: 0, first_name: 1 })
@@ -19,13 +21,13 @@ export class IndexController {
 
         if (!req.user) {
             return res.render("index", {
-                title: "Veiled",
+                title: IndexController.PAGE_TITLE,
                 user: null,
                 posts,
             });
         }
         return res.render("index", {
-            title: "Veiled",
+            title: IndexController.PAGE_TITLE,
             user: req.user,
             posts,
         });

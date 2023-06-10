@@ -14,7 +14,7 @@ export class MemberController {
         return MEMBER_CODE;
     }
 
-    private static readonly PAGE_TITLE = "Members access";
+    private static readonly PAGE_TITLE = "Members area";
 
     public static get(req: Request, res: Response) {
         if (!req.user || req.user.member_status !== 0) {
@@ -43,6 +43,7 @@ export class MemberController {
 
             if (!validationErrors.isEmpty()) {
                 return res.render("member", {
+                    title: MemberController.PAGE_TITLE,
                     user: req.user,
                     errors: validationErrors,
                 });

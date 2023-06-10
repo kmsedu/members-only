@@ -1,21 +1,70 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="h-full">
     <%- include("head"); %>
 
-    <body>
-        <%- include("header"); %>
+    <body class="flex h-full flex-col bg-base-100 sm:grid sm:grid-cols-2">
+        <div
+            class="navbar max-h-16 justify-evenly bg-base-300 text-white sm:h-full sm:max-h-none sm:justify-start sm:p-8 sm:text-4xl">
+            <a href="/" class="btn-ghost btn text-2xl normal-case">Veiled</a>
+            <span class="text-white text-opacity-30">|</span>
+            <h1 class="font-bold opacity-80">Members</h1>
+        </div>
+        <main class="grid flex-1 sm:place-content-center sm:place-items-center">
+            <div
+                class="card prose w-full max-w-none rounded-none bg-base-200 sm:rounded-box sm:p-6">
+                <h2 class="hidden sm:block">Members area</h2>
+                <form
+                    action=""
+                    method="post"
+                    class="flex flex-1 flex-col items-center">
+                    <p class="p-4 sm:p-0">
+                        Enter the access code to view the author and date of all
+                        messages.
+                    </p>
+                    <fieldset
+                        class="flex w-full flex-1 flex-col items-center sm:mt-0">
+                        <label
+                            for="code"
+                            class="hidden w-full sm:label sm:max-w-sm">
+                            <span class="label-text">
+                                Code
+                                <span class="text-error">*</span>
+                                :
+                            </span>
+                        </label>
+                        <input
+                            type="text"
+                            placeholder="Code"
+                            name="code"
+                            id="code"
+                            class="input input-lg w-full rounded-none border-b border-l-0 border-r-0 border-t-0 border-neutral bg-neutral-focus transition-colors duration-200 focus:bg-neutral focus:outline-none sm:max-w-sm sm:border sm:border-error sm:placeholder:text-transparent sm:placeholder-shown:border-neutral sm:valid:border-success sm:focus:border-primary md:rounded-md"
+                            required />
+                    </fieldset>
 
-        <h1>Members Access</h1>
-        <p>Enter in the entry code below to gain member status:</p>
+                    <div
+                        class="error-container w-full px-4 sm:min-h-16 sm:h-auto">
+                        <% if (errors) { %> <% for (const error of
+                        errors.array()) { %>
+                        <p class="py-1 text-sm italic text-error">
+                            <%= error.msg %>
+                        </p>
+                        <%}%><%}%>
+                    </div>
 
-        <form action="" method="post">
-            <label for="code">Code:</label>
-            <input type="text" name="code" id="code" required />
-            <button>Enter</button>
-        </form>
-
-        <% if (errors) { %> <% for (const error of errors.array()) { %>
-        <p><%= error.msg %></p>
-        <%}%> <%}%>
+                    <div
+                        class="flex w-full justify-center pt-6 sm:join sm:relative sm:max-w-md">
+                        <button
+                            class="btn-warning join-item btn flex-1 rounded-none normal-case">
+                            Access member area
+                        </button>
+                        <a
+                            class="btn-error join-item btn flex-1 rounded-none normal-case"
+                            href="/">
+                            Cancel
+                        </a>
+                    </div>
+                </form>
+            </div>
+        </main>
     </body>
 </html>
