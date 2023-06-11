@@ -1,6 +1,10 @@
 {
   "name": "members-only",
   "version": "1.0.0",
+  "engines": {
+    "node": ">=18.16.0"
+  },
+  "private": true,
   "description": "",
   "main": "index.js",
   "type": "module",
