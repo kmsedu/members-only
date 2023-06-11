@@ -10,6 +10,9 @@ import session from "express-session";
 import passport from "passport";
 import { User } from "./models/user.model.js";
 import { Auth } from "./util/auth.js";
+import compression from "compression";
+import helmet from "helmet";
+import expressRateLimit from "express-rate-limit";
 
 export const __filename = fileURLToPath(import.meta.url);
 export const __dirname = path.dirname(__filename);
@@ -57,6 +60,14 @@ passport.deserializeUser(async function (id: string, done) {
 app.use(passport.initialize());
 app.use(passport.session());
 
+app.use(
+    expressRateLimit({
+        windowMs: 1000 * 60 * 1,
+        max: 20,
+    })
+);
+app.use(helmet());
+app.use(compression());
 app.use(urlencoded({ extended: false }));
 app.use(json());
 app.use(express.static(path.join(__dirname, "/public")));
