@@ -9,6 +9,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
+    "start": "node build/index.js",
     "dev": "pnpm run style & nodemon src/index.ts",
     "style": "postcss src/tailwind.css -o src/public/styles/style.css --watch",
     "clean": "rm -rf ./build",
